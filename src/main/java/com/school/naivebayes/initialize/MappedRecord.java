@@ -9,7 +9,7 @@ public class MappedRecord {
     private Map<String, Integer> mappedWords = new HashMap<>();
 
     public MappedRecord(String text) {
-        // Burada ilgili text için maplemeler yapılıyor ve toplam kelime sayısı hesaplanıyor.
+        // Mapping for given commend.
         this.text = text;
         String[] words = text.split(" ");
         for (String word : words) {
@@ -31,7 +31,7 @@ public class MappedRecord {
     }
 
     public double getWordCalc(String word, int totalSize) {
-        //Verilen kelime için, ilgili sınıfta bayes teoremine göre olasılık hesbaı yapılıyor.
+        //For given word, doing bayes calculation.
         if (!mappedWords.containsKey(word)) {
             return 1d / ((double)total + (double)totalSize);
         }
